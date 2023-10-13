@@ -44,10 +44,10 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="mx-auto max-w-screen-md max-h-screen">
       <Header />
       <Form addItem={addItem} />
-      <div className="m-10 max-h-screen">
+      <div className="my-10">
         {items.length === 0 && (
           <div className="flex flex-col items-center justify-center text-gray-400 text-4xl font-thin text-center">
             <svg
