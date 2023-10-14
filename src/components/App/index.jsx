@@ -5,42 +5,17 @@ import Item from "components/Item";
 import Form from "components/Form";
 
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      name: "Молоко",
-      isChecked: 'boolean'
-    },
-    {
-      id: 2,
-      name: "Йогурт",
-      isChecked: 'boolean'
-    },
-    {
-      id: 3,
-      name: "Лук",
-      isChecked: 'boolean'
-    },
-    {
-      id: 4,
-      name: "Капуста",
-      isChecked: 'boolean'
-    },
-    {
-      id: 5,
-      name: "Яблоки",
-      isChecked: 'boolean'
-    },
-  ]);
-
-  const addItem = (item) => {
-    const newItems = [...items, item];
-    setItems(newItems);
-  };
+  const [items, setItems] = useState([]);
 
   const deleteItem = (id) => {
     const filteredItems = items.filter((item) => item.id !== id);
     setItems(filteredItems);
+    console.log("отфильтр", filteredItems);
+  };
+  const addItem = (item) => {
+    const newItems = [...items, item];
+    setItems(newItems);
+    console.log(newItems);
   };
 
   return (
@@ -73,8 +48,8 @@ function App() {
               <Item
                 key={item.id}
                 item={item}
-                addItem={addItem}
                 deleteItem={deleteItem}
+                addItem={addItem}
               />
             );
           })}

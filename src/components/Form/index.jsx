@@ -29,17 +29,21 @@ const products = [
   "Ягоды ",
 ];
 const names = products.sort();
+
+let idCount = 1;
+
 const Form = ({ addItem }) => {
   const [name, setName] = useState(names[0]);
-  const [id, setId] = useState("")
+
   const handleClick = (event) => {
     event.preventDefault();
+
     const item = {
-        id,
-        name
+      id: idCount++,
+      name: name,
     };
+
     addItem(item);
-    setId("0");
     setName("0");
   };
 
