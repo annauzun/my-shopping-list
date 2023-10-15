@@ -15,8 +15,8 @@ const Item = (props) => {
         />
         <p
           className={cn("text-xl w-full", {
-            "bg-green-400": isChecked,
-            "bg-sky-400": !isChecked,
+            "bg-green-200": isChecked,
+            "bg-sky-200": !isChecked,
           })}
         >
           {item.name}
